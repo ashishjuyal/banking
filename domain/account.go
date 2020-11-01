@@ -1,6 +1,9 @@
 package domain
 
-import "github.com/ashishjuyal/banking/errs"
+import (
+	"github.com/ashishjuyal/banking/dto"
+	"github.com/ashishjuyal/banking/errs"
+)
 
 type Account struct {
 	AccountId   string
@@ -9,6 +12,10 @@ type Account struct {
 	AccountType string
 	Amount      float64
 	Status      string
+}
+
+func (a Account) ToNewAccountResponseDto() dto.NewAccountResponse {
+	return dto.NewAccountResponse{a.AccountId}
 }
 
 type AccountRepository interface {
