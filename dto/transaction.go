@@ -14,14 +14,15 @@ type TransactionRequest struct {
 }
 
 func (r TransactionRequest) IsTransactionTypeWithdrawal() bool {
-	if r.TransactionType == WITHDRAWAL {
-		return true
-	}
-	return false
+	return r.TransactionType == WITHDRAWAL
+}
+
+func (r TransactionRequest) IsTransactionTypeDeposit() bool {
+	return r.TransactionType == DEPOSIT
 }
 
 func (r TransactionRequest) Validate() *errs.AppError {
-	if r.TransactionType != WITHDRAWAL && r.TransactionType != DEPOSIT {
+	if !r.IsTransactionTypeWithdrawal() && !r.IsTransactionTypeDeposit() {
 		return errs.NewValidationError("Transaction type can only be deposit or withdrawal")
 	}
 	if r.Amount < 0 {
