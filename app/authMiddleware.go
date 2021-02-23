@@ -2,7 +2,7 @@ package app
 
 import (
 	"github.com/ashishjuyal/banking/domain"
-	"github.com/ashishjuyal/banking/errs"
+	"github.com/ashishjuyal/banking-lib/errs"
 	"github.com/gorilla/mux"
 	"net/http"
 	"strings"

@@ -2,7 +2,7 @@ package domain
 
 import (
 	"github.com/ashishjuyal/banking/dto"
-	"github.com/ashishjuyal/banking/errs"
+	"github.com/ashishjuyal/banking-lib/errs"
 )
 
 const dbTSLayout = "2006-01-02 15:04:05"

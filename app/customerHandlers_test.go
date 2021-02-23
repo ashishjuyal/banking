@@ -2,7 +2,7 @@ package app
 
 import (
 	"github.com/ashishjuyal/banking/dto"
-	"github.com/ashishjuyal/banking/errs"
+	"github.com/ashishjuyal/banking-lib/errs"
 	"github.com/ashishjuyal/banking/mocks/service"
 	"github.com/golang/mock/gomock"
 	"github.com/gorilla/mux"

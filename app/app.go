@@ -3,7 +3,7 @@ package app
 import (
 	"fmt"
 	"github.com/ashishjuyal/banking/domain"
-	"github.com/ashishjuyal/banking/logger"
+	"github.com/ashishjuyal/banking-lib/logger"
 	"github.com/ashishjuyal/banking/service"
 	"github.com/gorilla/mux"
 	"github.com/jmoiron/sqlx"
