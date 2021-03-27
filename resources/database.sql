@@ -66,3 +66,10 @@ INSERT INTO `users` VALUES
   ('2001','abc123','user', 2001, '2020-08-09 10:27:22'),
   ('2000','abc123','user', 2000, '2020-08-09 10:27:22');
 
+DROP TABLE IF EXISTS `refresh_token_store`;
+
+CREATE TABLE `refresh_token_store` (
+    `refresh_token` varchar(300) NOT NULL,
+    created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`refresh_token`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
