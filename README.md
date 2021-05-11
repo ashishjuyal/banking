@@ -1,5 +1,4 @@
-# banking-auth
-
+# banking
 ##### Run `./start.sh` to download the dependencies and run the the application
 
 To run the application, you have to define the environment variables, default values of the variables are defined inside `start.sh`
