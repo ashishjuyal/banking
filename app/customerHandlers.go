@@ -11,6 +11,24 @@ type CustomerHandlers struct {
 	service service.CustomerService
 }
 
+// swagger:operation GET /customers Customers list
+//
+// List customers.
+//
+// This will return all customers, active and inactive
+//
+// ---
+// produces:
+// - application/json
+// responses:
+//   '200':
+//     description: gets all customers from database
+//     schema:
+//       type: array
+//       items:
+//         "$ref": "#/definitions/customerResponse"
+//   '500':
+//     description: when database down
 func (ch *CustomerHandlers) getAllCustomers(w http.ResponseWriter, r *http.Request) {
 
 	status := r.URL.Query().Get("status")
@@ -24,6 +42,18 @@ func (ch *CustomerHandlers) getAllCustomers(w http.ResponseWriter, r *http.Reque
 	}
 }
 
+// swagger:route GET /customers/{customer_id} Customers get
+//
+// Get a single customer.
+//
+// This will return a single customer, by Id
+//
+//     Produces:
+//     - application/json
+//
+//     Responses:
+//       200: customerResponse
+//       500: description: when database not available
 func (ch *CustomerHandlers) getCustomer(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id := vars["customer_id"]

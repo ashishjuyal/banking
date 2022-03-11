@@ -24,3 +24,18 @@ You can use any one of the following procedure to make a database instance, and 
 
 # run unit tests
   `./run-tests.sh`
+
+## Swagger documentation
+You need to install go-swagger in your path. I have used [v0.28.0](https://github.com/go-swagger/go-swagger/releases/tag/v0.28.0)
+Download the version compatible with your OS and rename the file to `swagger`. This file should be available in your path. If you are on `linux` or `osx` you might also need to add `execute permission` to the downloaded file using `chmod +x swagger`
+
+Generate swagger json file along with models spes
+
+```shell
+$ swagger generate spec -o ./swagger.json --scan-models
+```
+
+Run the swagger documentation, you can also specify port
+```shell
+$ swagger serve swagger.json --port 5000
+```

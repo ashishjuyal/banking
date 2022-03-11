@@ -12,6 +12,27 @@ type AccountHandler struct {
 	service service.AccountService
 }
 
+// swagger:operation GET /customers/{customer_id}/account Accounts New
+//
+// Create a new account for customer.
+//
+// This creates a new account for the given customer
+//
+// ---
+// produces:
+// - application/json
+// parameters:
+// - name: request
+//   in: body
+//   description: tags to filter by
+//   required: true
+//   schema:
+//     "$ref": "#/definitions/newAccountRequest"
+// responses:
+//   '201':
+//     description: gets all customers from database
+//     schema:
+//       "$ref": "#/definitions/newAccountResponse"
 func (h AccountHandler) NewAccount(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	customerId := vars["customer_id"]

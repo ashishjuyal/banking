@@ -1,10 +1,18 @@
 package dto
 
+// Customer response details
+// swagger:model customerResponse
 type CustomerResponse struct {
-	Id          string `json:"customer_id"`
-	Name        string `json:"full_name"`
-	City        string `json:"city"`
-	Zipcode     string `json:"zipcode"`
+	// Customer Id
+	Id string `json:"customer_id"`
+	// Full name of customer
+	Name string `json:"full_name"`
+	// City of customer
+	City string `json:"city"`
+	// Zipcode of customer city
+	Zipcode string `json:"zipcode"`
+	// Date of birth of customer in YYYY-MM-DD format
 	DateofBirth string `json:"date_of_birth"`
-	Status      string `json:"status"`
+	// Tells if the customer is active or not
+	Status string `json:"status"`
 }

@@ -5,10 +5,15 @@ import (
 	"strings"
 )
 
+// New account request details
+// swagger:model newAccountRequest
 type NewAccountRequest struct {
-	CustomerId  string  `json:"customer_id"`
-	AccountType string  `json:"account_type"`
-	Amount      float64 `json:"amount"`
+	// Customer Id
+	CustomerId string `json:"customer_id"`
+	// Type of Account: saving or checking
+	AccountType string `json:"account_type"`
+	// Account opening amount
+	Amount float64 `json:"amount"`
 }
 
 func (r NewAccountRequest) Validate() *errs.AppError {
